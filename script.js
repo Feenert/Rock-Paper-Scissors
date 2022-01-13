@@ -55,7 +55,7 @@ function game(){
 
     if (winner == false){
         break
-    } else if (winner == true){
+    } else{
         
         let again = prompt(winner + " Do you want to play again? (y/n)");
         if (again == "y"){
