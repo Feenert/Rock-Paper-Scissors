@@ -10,7 +10,6 @@ function choiceConverter(choice){
     } else {
         return "Incorret input";
     }
-
 }
 
 function computerPlay(){
@@ -42,6 +41,8 @@ function compare(){
        return "Computer wins!";
    } else if (playerSelection == "scissors" && computerSelection == "paper"){
        return "Player wins!";
+   } else if(playerSelection == "Incorrect input"){
+       return false
    } else {
         return "Draw.";
    }
@@ -51,10 +52,16 @@ function compare(){
 function game(){
     while (true){
     let winner = compare();
-    let again = prompt(winner + " Do you want to play again? (y/n)");
+
+    if (winner == false){
+        break
+    } else if (winner == true){
+        
+        let again = prompt(winner + " Do you want to play again? (y/n)");
         if (again == "y"){
         } else if (again == "n") {
             return
         }
+    }
     }
 }
