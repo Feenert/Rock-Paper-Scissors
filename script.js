@@ -27,11 +27,13 @@ function playerChoice(){
 
 function compare(){
    let computerSelection = computerPlay();
+   console.log(computerSelection);
    let playerSelection =  playerChoice();
+   console.log(playerSelection);
 
    if (playerSelection == "rock" && computerSelection == "paper"){
        return "Computer wins!";
-   } else if (playerSelection == "rock" && computerSelection == "scissosrs"){
+   } else if (playerSelection == "rock" && computerSelection == "scissors"){
        return "Player wins!";
    } else if (playerSelection == "paper" && computerSelection == "scissors"){
        return "Computer wins!";
@@ -48,19 +50,44 @@ function compare(){
    }
 }
 
+let playerScore = 0;
+let computerScore = 0;
 
 function game(){
-    while (true){
-    let winner = compare();
+    let i = 0;
 
-    if (winner == false){
+    while (i <= 4){
+    let winnerRound = compare();
+
+    if (winnerRound == false){
         break
     } else{
-        
-        let again = prompt(winner + " Do you want to play again? (y/n)");
-        if (again == "y"){
-        } else if (again == "n") {
+        if (winnerRound == "Computer wins!"){
+            computerScore = computerScore + 1;
+            console.log(computerScore);
+            if (computerScore == 3){
+                return alert("Computer wins!")
+            }
+        }
+
+        if (winnerRound == "Player wins!"){
+            playerScore = playerScore + 1;
+            console.log(playerScore);
+            if (playerScore == 3){
+                return alert("Player wins!")
+            }
+        }
+
+        if (winnerRound == "Draw."){
+            alert("Draw");
+        } else {
+            let again = prompt(winnerRound + " Player Score: " + playerScore + " Computer Score: " + computerScore + " Next game (y/n)");
+            if (again == "y"){
+                i = i +1
+                console.log(i);
+        }   else if (again == "n") {
             return
+        }
         }
     }
     }
