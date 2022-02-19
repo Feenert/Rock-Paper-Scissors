@@ -4,9 +4,31 @@
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8">
         <script type="text/javascript" src="./script.js"></script>
-    </head>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        </head>
 
-    <body style="background-color: black;">
-        <script>game();</script>
+    <body>
+        <!-- <script>game();</script> -->
+        
+        <div class="results">
+            <h1 id="playerScore">Player: 0 </h1>
+            <h1 id="computerScore">Computer: 0 </h1>
+        </div>
+        
+        <div>
+            <p id="gameOver"></p>
+        </div>
+        
+        <div class="images">
+            <span id="playerImage"><img src="./images/rock.png"></span>
+            <span id="computerImage"><img src="./images/rock.png"></span>
+        </div>
+
+        <div class="buttons">
+            <button type="button" onclick="game(0)">Rock</botton>
+            <button type="button" onclick="game(1)">Paper</botton>
+            <button type="button" onclick="game(2)">Scissors</botton>
+        </div>
+
     </body>
 </html>
