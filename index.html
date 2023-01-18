@@ -11,23 +11,21 @@
         <!-- <script>game();</script> -->
         
         <div class="results">
-            <h1 id="playerScore">Player: 0 </h1>
-            <h1 id="computerScore">Computer: 0 </h1>
+            <p id="playerScore">Player: 0 </p>
+            <p id="computerScore">Computer: 0 </p>
         </div>
         
-        <div>
             <p id="gameOver"></p>
-        </div>
         
         <div class="images">
             <span id="playerImage"><img src="./images/rock.png"></span>
             <span id="computerImage"><img src="./images/rock.png"></span>
         </div>
 
-        <div class="buttons">
-            <button type="button" onclick="game(0)">Rock</botton>
-            <button type="button" onclick="game(1)">Paper</botton>
-            <button type="button" onclick="game(2)">Scissors</botton>
+        <div id="buttons">
+            <button class="option" type="button" onclick="game(0)">Rock</botton>
+            <button class="option" type="button" onclick="game(1)">Paper</botton>
+            <button class="option" type="button" onclick="game(2)">Scissors</botton>
         </div>
 
     </body>

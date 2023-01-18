@@ -21,27 +21,27 @@ let computerChoice = Math.floor(Math.random()*3);
     } else if( playerChoice == 0 && computerChoice == 1){
         console.log('bot wins');
         computerScore++;
-        document.getElementById('computerScore').outerHTML = `<h1 id="computerScore">Computer: ${computerScore} </h1>`;
+        document.getElementById('computerScore').outerHTML = `<p id="computerScore">Computer: ${computerScore} </p>`;
     } else if (playerChoice == 0 && computerChoice == 2){
         console.log('you win');
         playerScore++;
-        document.getElementById('playerScore').outerHTML = `<h1 id="playerScore">Player: ${playerScore} </h1>`;
+        document.getElementById('playerScore').outerHTML = `<p id="playerScore">Player: ${playerScore} </p>`;
     } else if (playerChoice == 1 && computerChoice == 0){
         console.log('you win');
         playerScore++;
-        document.getElementById('playerScore').outerHTML = `<h1 id="playerScore">Player: ${playerScore} </h1>`;
+        document.getElementById('playerScore').outerHTML = `<p id="playerScore">Player: ${playerScore} </p>`;
     } else if(playerChoice == 1 && computerChoice == 2) {
         console.log('you lose');
         computerScore++;
-        document.getElementById('computerScore').outerHTML = `<h1 id="computerScore">Computer: ${computerScore} </h1>`;
+        document.getElementById('computerScore').outerHTML = `<p id="computerScore">Computer: ${computerScore} </p>`;
     } else if(playerChoice == 2 && computerChoice == 0) {
         console.log('you lose');
         computerScore++;
-        document.getElementById('computerScore').outerHTML = `<h1 id="computerScore">Computer: ${computerScore} </h1>`;
+        document.getElementById('computerScore').outerHTML = `<p id="computerScore">Computer: ${computerScore} </p>`;
     } else if(playerChoice == 2 && computerChoice == 1){
         console.log('you win');
         playerScore++;
-        document.getElementById('playerScore').outerHTML = `<h1 id="playerScore">Player: ${playerScore} </h1>`;
+        document.getElementById('playerScore').outerHTML = `<p id="playerScore">Player: ${playerScore} </p>`;
     }
 
     document.getElementById('playerImage').innerHTML = roundImages(playerChoice);
@@ -50,16 +50,24 @@ let computerChoice = Math.floor(Math.random()*3);
 
     if(roundOver == 5 || playerScore == 3 || computerScore == 3){
         document.getElementById('gameOver').innerHTML = "Game Over";
+        let options = document.getElementById("buttons");
+        let optionButtons = options;
+        options.remove();
+
         let playAgain = document.createElement('button');
         playAgain.innerHTML = "Play Again";
+        playAgain.setAttribute('id', 'buttons');
         document.body.appendChild(playAgain);
+        
+
         playAgain.addEventListener("click",() =>{
             playerScore = 0;
             computerScore = 0;
-            document.getElementById('computerScore').outerHTML = `<h1 id="computerScore">Computer: ${computerScore} </h1>`;
-            document.getElementById('playerScore').outerHTML = `<h1 id="playerScore">Player: ${playerScore} </h1>`;
+            document.getElementById('computerScore').outerHTML = `<p id="computerScore">Computer: ${computerScore} </p>`;
+            document.getElementById('playerScore').outerHTML = `<p id="playerScore">Player: ${playerScore} </p>`;
             document.getElementById('gameOver').innerHTML = "";
             playAgain.remove();
+            document.body.appendChild(optionButtons);
         });
        
     }
